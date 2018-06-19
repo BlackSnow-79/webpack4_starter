@@ -36,7 +36,6 @@ module.exports = options => {
         }
       }),
       new HtmlWebpackPlugin({
-        title: "My webpack template",
         template: "./src/pages/index.hbs",
         templateParameters: require("./src/data/data.json")
       }),
@@ -46,7 +45,10 @@ module.exports = options => {
       rules: [
         {
           test: /\.hbs$/,
-          loader: "handlebars-loader"
+          loader: "handlebars-loader",
+          query: {
+            partialDirs: [__dirname + "/src/layouts"]
+          }
         },
         {
           test: /\.js$/,

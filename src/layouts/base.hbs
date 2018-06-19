@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+      {{#if title}}
+        {{title}}
+      {{else}}
+        Page title
+      {{/if}}
+    </title>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    {{#> head-block}}
+      {{!-- Custom <head> content per page could be added. --}}
+    {{/head-block}}
+  </head>
+
+  <body>
+    {{!-- The `./header` partial is the default content, but can be overridden. --}}
+    {{#> header-block}}
+      {{> ./header}}
+    {{/header-block}}
+
+    {{#> content-block}}
+    {{!-- Content goes here. --}}
+    {{/content-block}}
+
+    {{#> footer-block}}
+      {{!-- The `./footer` partial is the default content, but can be overridden. --}}
+      {{> ./footer}}
+    {{/footer-block}}
+
+    {{#> scripts-block}}
+      {{!-- Custom scripts per page can be added. --}}
+    {{/scripts-block}}
+  </body>
+
+</html>

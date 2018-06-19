@@ -1,0 +1,17 @@
+{
+  "nav_menu": [
+    {
+      "link": "/",
+      "title": "Home"
+    },
+    {
+      "link": "/about.html",
+      "title": "About"
+    },
+    {
+      "link": "/contact.html",
+      "title": "Contact"
+    }
+  ],
+  "page": "demo content"
+}
