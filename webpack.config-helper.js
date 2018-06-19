@@ -37,13 +37,17 @@ module.exports = options => {
       }),
       new HtmlWebpackPlugin({
         title: "My webpack template",
-        template: "./src/pages/index.hbs"
+        template: "./src/pages/index.hbs",
+        templateParameters: require("./src/data/data.json")
       }),
       new CleanWebpackPlugin([dest])
     ],
     module: {
       rules: [
-        { test: /\.hbs$/, loader: "handlebars-loader" },
+        {
+          test: /\.hbs$/,
+          loader: "handlebars-loader"
+        },
         {
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,

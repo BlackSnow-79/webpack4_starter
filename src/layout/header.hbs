@@ -1,16 +1,12 @@
 <header>
   <h1 class="logo">Test</h1>
   <nav class="navigation">
+    {{#each nav_menu}}
     <ul>
       <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/">About</a>
-      </li>
-      <li>
-        <a href="/">Contact</a>
+        <a href="{{link}}">{{title}}</a>
       </li>
     </ul>
+    {{/each}}
   </nav>
 </header>
