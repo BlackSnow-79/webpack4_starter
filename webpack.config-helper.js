@@ -31,7 +31,7 @@ module.exports = options => {
         }
       }),
       new HtmlWebpackPlugin({
-        template: "./src/index.html"
+        template: "./src/pages/index.html"
       }),
       new CleanWebpackPlugin([dest])
     ],
@@ -84,7 +84,7 @@ module.exports = options => {
         // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
         background: "#fff",
         // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-        title: "test",
+        title: "webpack",
 
         // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
         icons: {
@@ -118,7 +118,7 @@ module.exports = options => {
           {
             loader: "url-loader",
             options: {
-              name: "[name].[hash:20].[ext]",
+              name: "[name].[hash:8].[ext]",
               limit: 8192
             }
           }
@@ -146,7 +146,7 @@ module.exports = options => {
             loader: "url-loader",
             options: {
               // On development we want to see where the file is coming from, hence we preserve the [path]
-              name: "[path][name].[ext]?hash=[hash:20]",
+              name: "[path][name].[ext]?hash=[hash:8]",
               limit: 8192
             }
           }
