@@ -23,6 +23,11 @@ module.exports = options => {
       filename: "bundle.[hash].js"
     },
     plugins: [
+      new webpack.LoaderOptionsPlugin({
+        options: {
+          handlebarsLoader: {}
+        }
+      }),
       new Webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify(
@@ -31,12 +36,14 @@ module.exports = options => {
         }
       }),
       new HtmlWebpackPlugin({
-        template: "./src/pages/index.html"
+        title: "My webpack template",
+        template: "./src/pages/index.hbs"
       }),
       new CleanWebpackPlugin([dest])
     ],
     module: {
       rules: [
+        { test: /\.hbs$/, loader: "handlebars-loader" },
         {
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
@@ -75,7 +82,7 @@ module.exports = options => {
         // Your source logo
         logo: "./src/assets/icon.png",
         // The prefix for all image files (might be a folder or a name)
-        prefix: "icons-[hash]/",
+        prefix: "static-[hash]/",
         // Generate a cache file with control hashes and
         // don't rebuild the favicons until those hashes change
         persistentCache: true,
